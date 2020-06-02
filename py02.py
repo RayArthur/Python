@@ -1,58 +1,84 @@
-# type()查看變數型別
-# id() 查看變數記憶體位置
+a, b, c = 4, 2, 5
+d, f = 3.25, 5.5
 
-a = 100
-print('a =', a, type(a), id(a))
+print(f'a={a}, b={b}, c={c}')
 
-b = 100
-print('b =', b, type(b), id(b))
+# + - * / %(餘數) // **
+print('a * b =', a * b)
+print('a ** b =', a ** b)
+print('a % 3 =', a % 3)
+print('c / b =', c / b)
+print('c // b =', c // b)
+print('d + f =', d + f)
 
 print('-' * 30)
-a = a * 10
-print('a =', a, type(a), id(a))
-print('b =', b, type(b), id(b))
+
+print(0.1 + 0.1 + 0.1)
+print(1.0 - 0.8)
 
 print('-' * 30)
 
-# 資料型態轉換
+r = 30.17
+NTD = int(input('輸入台幣：'))
+USD = NTD / r
+print(f'兌換美元：{USD:.2f}')
+
+# 指派運算
+# += -= *= /= %= **= //=
+# a = a + b
+# a += b
+money = int(input('輸入台幣：'))
+# money = money / r
+money /= r
+print(f'兌換美元：{money:.2f}')
+
+print('-' * 30)
+
+# 關係運算
+# > >= < <= ==(相等) !=(不相等)  ---> True / False
 a = 5
-b = 3.0
-c = a + b
-print('c =', c, type(c), id(c))
+b = 3
+print(a > b)
+print(a >= b)
+print(a < b)
+print(a <= b)
+print(a == b)
+print(a != b)
 
-d = False # False->0 True->1
-c = a + d
-print('c =', c, type(c), id(c))
-
-# 強制轉型：型別(資料)
-a = -1
-b = 0
-c = 1
-d = 5
-print(bool(a), bool(b), bool(c), bool(d))
-
-a = True
-b = False
-print(int(a), int(b))
-
-print('-' * 30)
-
-# a = int('123')
-# a = int(123.45)
-# a = int('234.56') # ValueError: invalid literal for int() with base 10: '234.56'
-# a = int('a')      #ValueError: invalid literal for int() with base 10: 'a'
-# a = int('abc')      # ValueError: invalid literal for int() with base 10: 'abc'
-a = float('234.56')
-print('a =', a, type(a), id(a))
-a = int(a)
-print('a =', a, type(a), id(a))
+# 邏輯運算
+# and(且)：a and b
+# or(或)： a or b
+# not(反)： not a
+a = 2
+b = 3
+c = 4
+boo = (a + 2) > (b + 3) or (c + 4) > (b - 2)
+print('boo:', boo)
+print('not boo：', not boo)
 
 print('-' * 30)
 
-# a = str(False)
-# a = bool('Python') # True
-a = bool(None) #空值  # False
-print('a =', a, type(a), id(a))
+
+a = 5
+b = 5
+c = 5.0
+# is(比 == 更嚴格，資料型別必須相同)
+print('a == b：', a == b)
+print('a is b：', a is b)
+
+print('a == c：', a == c)
+print('a is c：', a is c)
+
+# is not(比 != 更寬鬆，資料型別不同就當作不相等
+print('a != b：', a != b)
+print('a is not b：', a is not b)
+
+print('a != c：', a != c)
+print('a is not c：', a is not c)
+
+
+
+
 
 
 
